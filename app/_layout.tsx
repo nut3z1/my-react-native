@@ -1,11 +1,29 @@
+import { AuthProvider } from "@/contexts/authContext";
 import { Stack } from "expo-router";
 import React from "react";
 import { StyleSheet } from "react-native";
 
-const _layout = () => {
-  return <Stack screenOptions={{ headerShown: false }}></Stack>;
+const StackLayout = () => {
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen
+        name="(modals)/profileModal"
+        options={{
+          presentation: "modal",
+        }}
+      />
+    </Stack>
+  );
 };
 
-export default _layout;
+function RootLayout() {
+  return (
+    <AuthProvider>
+      <StackLayout />
+    </AuthProvider>
+  );
+}
+
+export default RootLayout;
 
 const styles = StyleSheet.create({});

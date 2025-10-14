@@ -1,18 +1,7 @@
 import { colors } from "@/constants/theme";
-import { useRouter } from "expo-router";
-import { useEffect } from "react";
 import { Image, StyleSheet, View } from "react-native";
 
 const Index = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    setTimeout(() => {
-      router.push("/(auth)/welcome");
-    }, 2000);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <View style={styles.container}>
       <Image
