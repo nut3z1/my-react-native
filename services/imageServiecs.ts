@@ -13,7 +13,7 @@ export const uploadFileToCloudinary = async (
       return { success: true, data: file };
     }
     if (file && (file as FileObject)?.uri) {
-      console.log("chay rui");
+      console.log("chay rui", file);
       const formData = new FormData();
       formData.append("file", {
         uri: (file as FileObject)?.uri,

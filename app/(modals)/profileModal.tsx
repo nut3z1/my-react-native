@@ -40,6 +40,7 @@ const ProfileModal = () => {
     }
     setLoading(true);
     const res = await updateUser(user?.uid as string, userData);
+    console.log("res", res);
     setLoading(false);
     if (res?.success) {
       updateUserData(user?.uid as string);
