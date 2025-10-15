@@ -13,7 +13,6 @@ export const uploadFileToCloudinary = async (
       return { success: true, data: file };
     }
     if (file && (file as FileObject)?.uri) {
-      console.log("chay rui", file);
       const formData = new FormData();
       formData.append("file", {
         uri: (file as FileObject)?.uri,
@@ -22,7 +21,6 @@ export const uploadFileToCloudinary = async (
       } as any);
       formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
       formData.append("folder", folderName);
-      console.log("formData", formData);
 
       const response = await axios.post(CLOUDINARY_API_URL, formData, {
         headers: {
