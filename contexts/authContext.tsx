@@ -47,7 +47,6 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
       return { success: true, message: "Login successfully" };
     } catch (error: any) {
       let msg = error?.message || "Login failed";
-      console.log("err", msg);
       if (msg.includes("(auth/invalid-credential)")) msg = "Wrong credentials";
       if (msg.includes("(auth/invalid-email)")) msg = "Invalid email";
       return { success: false, msg: msg };
@@ -74,7 +73,6 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
       if (msg.includes("(auth/email-already-in-use)"))
         msg = "This email is already in use";
       if (msg.includes("(auth/invalid-email)")) msg = "Invalid email";
-      console.log("err", msg);
       return { success: false, msg: msg };
     }
   };

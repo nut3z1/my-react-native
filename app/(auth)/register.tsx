@@ -31,11 +31,9 @@ const Register = () => {
       nameRef.current
     );
     setIsLoading(false);
-    console.log(res);
     if (res?.success) {
       Alert.alert("Register", res.msg);
     }
-    console.log(emailRef.current, passwordRef.current, nameRef.current);
   };
   return (
     <ScreenWrapper>
