@@ -24,10 +24,15 @@ const Wallet = () => {
     orderBy("createdAt", "desc"),
   ]);
 
-  console.log("wallets", wallets.length);
+  console.log("wallets.length", wallets.length);
+  console.log("wallets", wallets);
 
   const getTotalBalance = () => {
-    return 2500;
+    const total = wallets?.reduce(
+      (total, wallet) => total + (wallet.amount || 0),
+      0
+    );
+    return total;
   };
   return (
     <ScreenWrapper style={{ backgroundColor: "black" }}>
